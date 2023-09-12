@@ -535,7 +535,7 @@ pub fn set_download_url(
 
         let result = decipher_script.unwrap().call(
             decipher_script_string.0.as_str(),
-            (&args.get("s").and_then(|x| x.as_str()).unwrap_or(""),),
+            &(&args.get("s").and_then(|x| x.as_str()).unwrap_or(""),),
         );
 
         if result.is_err() {
@@ -607,7 +607,7 @@ pub fn set_download_url(
 
         let result = n_transform_script.unwrap().call(
             n_transform_script_string.0.as_str(),
-            (&components.get("n").and_then(|x| x.as_str()).unwrap_or(""),),
+            &(&components.get("n").and_then(|x| x.as_str()).unwrap_or(""),),
         );
 
         if result.is_err() {
